@@ -4,39 +4,39 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-`
-const Wrapper = styled.div`
-  padding: 10px 20px; 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
-`
+
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  
+`;
+
 const Left = styled.div`
   flex: 1;
+  display: flex;
+  align-items: center;
   background-color: rgb(170, 165, 165);
-  padding: 8px;
-  `;
+  padding: 10px;
 
-const Language = styled.span`
-    font-size: 14px;
-    cursor: pointer;
-    `;
+  `;
 
 
 const Center = styled.div`
   flex: 2;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   background-color:rgb(170, 165, 165);
-  padding: 3px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  padding: 5px;
+  
+  
   `;
 
 const SearchContainer = styled.div`
@@ -44,12 +44,12 @@ const SearchContainer = styled.div`
   align-items: center;
   border: 0.5px solid lightgray;
   margin-left: 25px;
-  padding: 1px;
+  padding: 5px;
   border-radius: 20px;
   background-color: white;
   
-  
   `;
+
 const Input = styled.input`
   border: none;
   margin: 5px;
@@ -66,11 +66,11 @@ const Right = styled.div`
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   background-color: rgb(170, 165, 165);
-  padding: 8px;
+  padding: 10px;
   margin-left: 30px;
   justify-content: center;
   
-  ;`
+  `;
 
 const MenuItem = styled.div`
   font-size: 14px;
@@ -84,13 +84,13 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Language>EN</Language>
+          left
         </Left>
         <Center>
           center
           <SearchContainer>
             <Input placeholder="search" />
-            <Search style={{ color: "gray", fontSize: 16 }} />
+            <Search style={{ color: "gray", fontSize: 14 }} />
           </SearchContainer>
         </Center>
         <Right>
