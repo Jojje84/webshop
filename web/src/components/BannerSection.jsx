@@ -13,7 +13,7 @@ const Container = styled.div`
 
 `
 
-const Banner = () => {
+const BannerSection = () => {
     return (
         <Container>
             10% off all products only menbers
@@ -21,4 +21,4 @@ const Banner = () => {
     )
 }
 
-export default Banner
+export default BannerSection

@@ -22,6 +22,27 @@ export const sliderItems = [
     },
 ];
 
+export const news = [
+    {
+        id: 1,
+        img: "public/demo.png",
+        title: "News 1",
+        desc: "afefeaef",
+    },
+    {
+        id: 2,
+        img: "public/demo.png",
+        title: "News 2",
+        desc: "afefeaef",
+    },
+    {
+        id: 3,
+        img: "public/demo.png",
+        title: "News 3",
+        desc: "afefeaef",
+    },
+];
+
 export const categories = [
     {
         id: 1,

@@ -1,5 +1,5 @@
 import { Search, ShoppingCartOutlined } from '@mui/icons-material';
-import { Badge, colors } from '@mui/material';
+import { Badge } from '@mui/material';
 import React from 'react'
 import styled from 'styled-components'
 
@@ -97,7 +97,7 @@ const Navbar = () => {
           <MenuItem>Register</MenuItem>
           <MenuItem>Sign In</MenuItem>
           <MenuItem>
-            <Badge badgeContent={4} color="primary">
+            <Badge badgeContent={1} color="primary">
               <ShoppingCartOutlined />
             </Badge>
           </MenuItem>

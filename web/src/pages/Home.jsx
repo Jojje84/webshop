@@ -1,16 +1,18 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Banner from '../components/Banner'
-import Slider from '../components/Slider'
-import Categories from '../components/Categories'
+import BannerSection from '../components/BannerSection'
+import Carousel from '../components/Carousel'
+import ProductCategories from '../components/ProductCategories'
+import NewsCard from '../components/Newscard'
 
 const Home = () => {
   return (
     <div>
-      <Banner />
+      <BannerSection />
       <Navbar />
-      <Slider />
-      <Categories />
+      <Carousel />
+      <NewsCard />
+      <ProductCategories />
     </div>
   )
 }
