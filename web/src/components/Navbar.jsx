@@ -32,9 +32,9 @@ const Center = styled.div`
   justify-content: flex-end;
   align-items: center;
   background-color:rgb(170, 165, 165);
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  padding: 5px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 10px;
   
   
   `;
@@ -63,8 +63,8 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
   background-color: rgb(170, 165, 165);
   padding: 10px;
   margin-left: 30px;
@@ -89,7 +89,7 @@ const Navbar = () => {
         <Center>
           center
           <SearchContainer>
-            <Input placeholder="search" />
+            <Input placeholder="Search" />
             <Search style={{ color: "gray", fontSize: 14 }} />
           </SearchContainer>
         </Center>

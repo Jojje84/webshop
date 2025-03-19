@@ -3,6 +3,7 @@ import { unstable_createBreakpoints } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
 import { sliderItems } from '../data'
+import { useState } from 'react'
 
 const Cointainer = styled.div`
     width: 100%;
@@ -35,7 +36,8 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
     height: 100%;
     display: flex;
-    transform: translateX(2 * -100vw);
+    transform: translateX(${props => props.slideIndex * -100}vw);
+    transition: all 1.5s ease;
 
 `
 const Slide = styled.div`
@@ -89,24 +91,24 @@ const Slider = () => {
     }
     return (
         <Cointainer>
-            <Arrow direction="left" onclick={() => handleClick("left")}>
+            <Arrow direction="left" onClick={() => handleClick("left")}>
                 <ArrowLeftOutlined />
             </Arrow>
             <Wrapper slideIndex={slideIndex}>
-                {sliderItems.map(item) => (
-                <Slide bg={item.bg}>
-                    <ImgContainer>
-                        <img src={item.img} />
-                    </ImgContainer>
-                    <InfoContainer>
-                        <Title>{item.title} </Title>
-                        <Desc>{item.desc}</Desc>
-                        <Button>Ver</Button>
-                    </InfoContainer>
-                </Slide>
-            ))}
+                {sliderItems.map((item) => (
+                    <Slide bg={item.bg}>
+                        <ImgContainer>
+                            <img src={item.img} />
+                        </ImgContainer>
+                        <InfoContainer>
+                            <Title>{item.title} </Title>
+                            <Desc>{item.desc}</Desc>
+                            <Button>Ver</Button>
+                        </InfoContainer>
+                    </Slide>
+                ))}
             </Wrapper>
-            <Arrow direction="right" onclick={() => handleClick("right")}>
+            <Arrow direction="right" onClick={() => handleClick("right")}>
                 <ArrowRightOutlined />
             </Arrow>
         </Cointainer>
