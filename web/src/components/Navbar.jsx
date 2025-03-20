@@ -85,7 +85,7 @@ const Navbar = () => {
       <Wrapper>
         <Left>
           Home
-          Categorys
+          Categories
           Contact
         </Left>
         <Center>

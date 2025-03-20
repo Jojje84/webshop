@@ -55,13 +55,13 @@ const ImgContainer = styled.div`
     display: flex;
     justify-content: center;
     text-align: center;
+    width: 100%;
+    object-fit: cover;
 
 `;
 
-const Image = styled.img`
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+const Img = styled.img`
+    
 
 `;
 
@@ -96,7 +96,7 @@ const Button = styled.button`
 
 `;
 
-const Carousel = () => {
+const HeroSection = () => {
     const [slideIndex, setSlideIndex] = useState(0)
     const handleClick = (direction) => {
         if (direction === "left") {
@@ -132,4 +132,4 @@ const Carousel = () => {
     )
 }
 
-export default Carousel 
+export default HeroSection 

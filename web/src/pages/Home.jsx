@@ -1,9 +1,9 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import BannerSection from '../components/BannerSection'
-import Carousel from '../components/Carousel'
-import NewsList from '../components/NewsList'
-import CategoryList from '../components/CategoryList'
+import HeroSection from '../components/HeroSection'
+import NewsSection from '../components/NewsSection'
+import CategorySection from '../components/CategorySection'
 import Popup from '../components/Popup'
 import { useEffect, useState } from 'react'
 
@@ -26,9 +26,9 @@ const Home = () => {
         </Popup>
       )}
       <Navbar />
-      <Carousel />
-      <NewsList/>
-      <CategoryList />
+      <HeroSection />
+      <NewsSection/>
+      <CategorySection />
     </div>
   )
 }

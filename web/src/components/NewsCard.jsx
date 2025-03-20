@@ -11,7 +11,7 @@ const Container = styled.div`
 
 `;
 
-const Image = styled.img`
+const Img = styled.img`
     width: 100%;
     height: 60%;
     object-fit: cover;
@@ -41,7 +41,7 @@ const Desc = styled.p`
 const NewsCard = ({ item }) => {
     return (
         <Container>
-            <Image src={item.img} />
+            <Img src={item.img} />
             <Info>
                 <Title>{item.title}</Title>
                 <Desc>{item.desc}</Desc>

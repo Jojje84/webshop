@@ -8,7 +8,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #f5f5f5;
+    background-color: #F5F5F5;
 `;
 
 const Headline = styled.div`
@@ -33,10 +33,10 @@ const CategoryWrapper = styled.div`
     margin-top: 20px;
 `;
 
-const CategoryList = () => {
+const CategorySection = () => {
   return (
     <Container>
-      <Headline>Categorys</Headline>
+      <Headline>CategoriesA</Headline>
       <CategoryWrapper>
         {categories.map(item => (
           <CategoryCard  key={item.id} item={item} />
@@ -46,4 +46,4 @@ const CategoryList = () => {
   );
 }
 
-export default CategoryList
+export default CategorySection

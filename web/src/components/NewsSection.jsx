@@ -33,7 +33,7 @@ const NewsWrapper = styled.div`
 
 `;
 
-const NewsList = () => {
+const NewsSection = () => {
     return (
         <Container>
           <Headline>NEWS</Headline>
@@ -46,4 +46,4 @@ const NewsList = () => {
       );
 };
 
-export default NewsList
+export default NewsSection
