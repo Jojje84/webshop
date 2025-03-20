@@ -11,7 +11,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  margin: 0px;
+  margin: 0 0 10px 0;
   padding: 0px;
   
 `;
@@ -21,7 +21,7 @@ const Left = styled.div`
   display: flex;
   align-items: center;
   background-color: rgb(170, 165, 165);
-  padding: 10px;
+  padding-left: 30px;
 
   `;
 
@@ -66,7 +66,7 @@ const Right = styled.div`
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
   background-color: rgb(170, 165, 165);
-  padding: 10px;
+  padding-right: 10px;
   margin-left: 30px;
   justify-content: center;
   
@@ -75,7 +75,7 @@ const Right = styled.div`
 const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
-  margin-left: 12px;
+  margin: 15px;
 
   `;
 
@@ -84,10 +84,11 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          left
+          Home
+          Categorys
+          Contact
         </Left>
         <Center>
-          center
           <SearchContainer>
             <Input placeholder="Search" />
             <Search style={{ color: "gray", fontSize: 14 }} />

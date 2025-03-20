@@ -12,7 +12,7 @@ const Cointainer = styled.div`
     overflow: hidden;
     margin: auto;
 
-`
+;`
 const Arrow = styled.div`
     width: 50px;
     height: 50px;
@@ -31,14 +31,15 @@ const Arrow = styled.div`
     opacity: 0.5;
     z-index: 2;
 
-`
+`;
 const Wrapper = styled.div`
     height: 100%;
     display: flex;
     transform: translateX(${props => props.$slideIndex * -100}vw);
     transition: all 1.5s ease;
 
-`
+`;
+
 const Slide = styled.div`
     width: 100vw;
     height: 60vh;
@@ -46,9 +47,8 @@ const Slide = styled.div`
     align-items: center;
     background-color: #${props => props.$bg};
 
-   
+`;
 
-`
 const ImgContainer = styled.div`
     flex: 1; 
     height: 50%;
@@ -56,14 +56,14 @@ const ImgContainer = styled.div`
     justify-content: center;
     text-align: center;
 
-`
+`;
+
 const Image = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
 
-`
+`;
 
 const InfoContainer = styled.div`
     flex: 1;
@@ -74,24 +74,28 @@ const InfoContainer = styled.div`
     justify-content: center;
     text-align: left;
 
-`
+`;
+
 const Title = styled.h1`
     font-size: 70px;
-`
+
+`;
+
 const Desc = styled.p`
     margin: 50px 0px;
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 3px;
 
-`
+`;
 const Button = styled.button`
     padding: 10px;
     font-size: 20px;
     background-color: transparent;
     cursor: pointer;
 
-`
+`;
+
 const Carousel = () => {
     const [slideIndex, setSlideIndex] = useState(0)
     const handleClick = (direction) => {

@@ -49,16 +49,21 @@ export const categories = [
     {
         id: 1,
         img: "public/demo.png",
-        title: "Titulo 1",
+        title: "Abstract",
     },
     {
         id: 2,
         img: "public/demo.png",
-        title: "Titulo 2",
+        title: "Animal",
     },
     {
         id: 3,
         img: "public/demo.png",
-        title: "Titulo 3",
+        title: "Citys",
+    },
+    {
+        id: 4,
+        img: "public/demo.png",
+        title: "no name",
     },
 ];

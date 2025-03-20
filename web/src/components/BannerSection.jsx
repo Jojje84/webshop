@@ -15,8 +15,8 @@ const Container = styled.div`
     border-radius: 25px;
     flex-direction: column;
 
+`;
 
-`
 const Title = styled.h1`
     font-size: 50px;
     margin: 1px;

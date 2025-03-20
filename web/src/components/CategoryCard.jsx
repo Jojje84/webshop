@@ -4,35 +4,41 @@ import React from 'react'
 const Container = styled.div`
     flex: 1;
     margin: 3px;
-    height: 70vh;
+    height: 20vh;
     position: relative;
 
-`
+`;
+
 const Image = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
 
-`
+`;
+
 const Info = styled.div`
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 25%;
+    width: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    
-    
-    
-`
-const Title = styled.h1`
+    justify-content: center;   
+    background-color: rgba(247, 248, 247, 0.88);
+    flex-direction: column;
+    border-radius: 25px;
+        
+`;
 
-`
+const Title = styled.h1`
+    font-size: 20px;
+`;
+
 const Button = styled.button`
 
-`
+`;
 
 const CategoryCard = ({ item }) => {
     return (
@@ -40,7 +46,7 @@ const CategoryCard = ({ item }) => {
             <Image src={item.img} />
             <Info>
                 <Title>{item.title}</Title>
-                <button>Go to</button>
+                <button>Look</button>
             </Info>
 
         </Container>
