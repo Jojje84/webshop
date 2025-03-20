@@ -7,6 +7,8 @@ import CategorySection from '../components/CategorySection'
 import Popup from '../components/Popup'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import Newsletter from '../components/Newsletter'
+import Footer from '../components/Footer'
 
 
 const HomeContainer = styled.div`
@@ -46,6 +48,8 @@ const Home = () => {
       <HeroSection />
       <NewsSection/>
       <CategorySection />
+      <Newsletter />
+      <Footer />
     </HomeContainer>
   )
 }

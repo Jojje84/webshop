@@ -3,7 +3,7 @@ import React from 'react'
 
 const Container = styled.div`
     Width: 100%;
-    height: 100%;
+    height: 50vh;
     margin: 10px;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@ const Img = styled.img`
 
 const Info = styled.div`
     height: 100%;
-    width:100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -42,6 +42,13 @@ const Title = styled.h1`
 `;
 
 const Button = styled.button`
+    border: none;
+    padding: 10px;
+    background-color: white;
+    color: gray;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 10px;
 
 `;
 
@@ -51,7 +58,7 @@ const CategoryCard = ({ item }) => {
             <Img src={item.img} />
             <Info>
                 <Title>{item.title}</Title>
-                <button>Look</button>
+                <Button>Click in</Button>
             </Info>
 
         </Container>

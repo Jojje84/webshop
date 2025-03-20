@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 const Cointainer = styled.div`
     width: 100%;
-    height: 100%;
+    height: 50vh;
     display: flex;
     position: relative;
     overflow: hidden;
@@ -33,7 +33,6 @@ const Arrow = styled.div`
 
 `;
 const Wrapper = styled.div`
-    height: 100%;
     display: flex;
     transform: translateX(${props => props.$slideIndex * -100}vw);
     transition: all 1.5s ease;
@@ -42,7 +41,6 @@ const Wrapper = styled.div`
 
 const Slide = styled.div`
     width: 100vw;
-    height: 50%;
     display: flex;
     align-items: center;
     background-color: #${props => props.$bg};
@@ -52,7 +50,6 @@ const Slide = styled.div`
 const ImgContainer = styled.div`
     flex: 1; 
     height: 100%;
-    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,8 +60,7 @@ const ImgContainer = styled.div`
 
 const InfoContainer = styled.div`
     flex: 1;
-    height: 100%;
-    width: 50%;
+    height: 10vh;
     display: flex;
     flex-direction: column;
     align-items: left;
