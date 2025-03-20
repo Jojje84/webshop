@@ -2,9 +2,11 @@ import styled from 'styled-components'
 import React from 'react'
 
 const Container = styled.div`
-    flex: 1;
-    margin: 3px;
-    height: 20vh;
+    Width: 100%;
+    height: 100%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
     position: relative;
 
 `;
@@ -13,27 +15,30 @@ const Img = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 50px;
 
 `;
 
 const Info = styled.div`
+    height: 100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 25%;
-    width: 50%;
-    display: flex;
     align-items: center;
     justify-content: center;   
     background-color: rgba(247, 248, 247, 0.88);
-    flex-direction: column;
     border-radius: 25px;
         
 `;
 
 const Title = styled.h1`
-    font-size: 20px;
+    font-size: 30px;
+    margin: 20px 0;
+    text-align: center;
 `;
 
 const Button = styled.button`

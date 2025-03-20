@@ -12,7 +12,7 @@ const Container = styled.div`
 `;
 
 const Headline = styled.div`
-    width: 90%;
+    width: 100%;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
@@ -25,11 +25,14 @@ const Headline = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 `;
 const NewsWrapper = styled.div`
     display: flex;
     justify-content: center;
     margin: 0 30px 0 30px;
+    flex-grow: 1;
+    width: 100%;
 
 `;
 

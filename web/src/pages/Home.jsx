@@ -6,6 +6,23 @@ import NewsSection from '../components/NewsSection'
 import CategorySection from '../components/CategorySection'
 import Popup from '../components/Popup'
 import { useEffect, useState } from 'react'
+import styled from 'styled-components'
+
+
+const HomeContainer = styled.div`
+  height: 100%;
+  width: 100wh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 25px;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 10%;
+  overflow-y: hidden;
+  box-shadow: 2px 2px 50px rgb(104, 103, 103), -2px -2px 50px rgb(104, 103, 103);
+`;
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +36,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <HomeContainer>
       {isOpen && (
         <Popup onClose={() => setIsOpen(false)}>
           <BannerSection />
@@ -29,7 +46,7 @@ const Home = () => {
       <HeroSection />
       <NewsSection/>
       <CategorySection />
-    </div>
+    </HomeContainer>
   )
 }
 

@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 const Cointainer = styled.div`
     width: 100%;
-    height: 60vh;
+    height: 100%;
     display: flex;
     position: relative;
     overflow: hidden;
@@ -42,7 +42,7 @@ const Wrapper = styled.div`
 
 const Slide = styled.div`
     width: 100vw;
-    height: 60vh;
+    height: 50%;
     display: flex;
     align-items: center;
     background-color: #${props => props.$bg};
@@ -51,28 +51,24 @@ const Slide = styled.div`
 
 const ImgContainer = styled.div`
     flex: 1; 
-    height: 50%;
+    height: 100%;
+    width: 50%;
     display: flex;
     justify-content: center;
-    text-align: center;
-    width: 100%;
-    object-fit: cover;
+    align-items: center;
+    overflow: hidden;
 
 `;
 
-const Img = styled.img`
-    
-
-`;
 
 const InfoContainer = styled.div`
     flex: 1;
-    height: 50%;
-    padding: 50px;
+    height: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: left;
+    align-items: left;
+    margin-left: 50px;
 
 `;
 
@@ -82,17 +78,20 @@ const Title = styled.h1`
 `;
 
 const Desc = styled.p`
-    margin: 50px 0px;
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 3px;
 
 `;
 const Button = styled.button`
-    padding: 10px;
     font-size: 20px;
     background-color: transparent;
     cursor: pointer;
+    width: 100px;
+    margin-left: 5%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
 `;
 
@@ -120,7 +119,7 @@ const HeroSection = () => {
                         <InfoContainer>
                             <Title>{item.title} </Title>
                             <Desc>{item.desc}</Desc>
-                            <Button>Ver</Button>
+                            <Button>Look</Button>
                         </InfoContainer>
                     </Slide>
                 ))}

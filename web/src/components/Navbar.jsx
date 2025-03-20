@@ -4,38 +4,43 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
+  width: 100%;
+  margin-bottom: 10px;
 
 
 `;
 
 const Wrapper = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  margin: 0 0 10px 0;
-  padding: 0px;
+  height: 60px;
   
 `;
 
 const Left = styled.div`
-  flex: 1;
+  flex-basis: 35%;
   display: flex;
   align-items: center;
-  background-color: rgb(170, 165, 165);
+  background-color: #B0B3B8;
   padding-left: 30px;
+  justify-content: flex-start;
+  height: 100%;
 
   `;
 
 
 const Center = styled.div`
-  flex: 2;
+  flex-basis: 25%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color:rgb(170, 165, 165);
+  background-color: #B0B3B8;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-  padding: 10px;
-  
+  height: 100%;
+  padding-right: 10px;
   
   `;
 
@@ -43,32 +48,40 @@ const SearchContainer = styled.div`
   display: flex;
   align-items: center;
   border: 0.5px solid lightgray;
-  margin-left: 25px;
-  padding: 5px;
   border-radius: 20px;
   background-color: white;
+  
   
   `;
 
 const Input = styled.input`
   border: none;
-  margin: 5px;
+  margin: 10px;
   border-radius: 20px;
-  padding-left: 5px;
+
+  `;
+
+const CenterSpace = styled.div`
+  flex-basis: 15%;
+  display: flex;
+  justify-content: center;
+  bsckground-color: white;
 
   `;
 
 const Right = styled.div`
-  flex: 1;
+  flex-basis: 25%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
-  background-color: rgb(170, 165, 165);
+  background-color: #B0B3B8;
   padding-right: 10px;
   margin-left: 30px;
   justify-content: center;
+  height: 100%;
+  
   
   `;
 
@@ -91,9 +104,11 @@ const Navbar = () => {
         <Center>
           <SearchContainer>
             <Input placeholder="Search" />
-            <Search style={{ color: "gray", fontSize: 14 }} />
+            <Search style={{ color: "gray", fontSize: 20 }} />
           </SearchContainer>
         </Center>
+        <CenterSpace>
+        </CenterSpace>
         <Right>
           <MenuItem>black/white</MenuItem>
           <MenuItem>log in</MenuItem>

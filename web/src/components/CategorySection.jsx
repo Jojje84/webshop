@@ -7,36 +7,38 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    background-color: #F5F5F5;
+    margin: 40px 0 30px 0;
 `;
 
 const Headline = styled.div`
-    width: 90%;
+     width: 100%;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 20px;
-    padding: 10px 20px;
+    margin: 0 0 20px 0;
+    padding: 10px;
     background-color: #ff9999;
     color: white;
     border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 `;
 
 const CategoryWrapper = styled.div`
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    justify-content: center;
+    margin: 0 30px 0 30px;
+    flex-grow: 1;
+    width: 100%;
 `;
 
 const CategorySection = () => {
   return (
     <Container>
-      <Headline>CategoriesA</Headline>
+      <Headline>Categories</Headline>
       <CategoryWrapper>
         {categories.map(item => (
           <CategoryCard  key={item.id} item={item} />
