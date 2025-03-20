@@ -13,14 +13,15 @@ const Overlay = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  
 `;
 
 const PopupBox = styled.div`
   background: white;
   padding: 20px;
-  border-radius: 10px;
-  width: 400px;
-  max-width: 90%;
+  border-radius: 50px;
+  width: 250px;
+  max-width: 100%;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
