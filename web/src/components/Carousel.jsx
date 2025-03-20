@@ -36,7 +36,7 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
     height: 100%;
     display: flex;
-    transform: translateX(${props => props.slideIndex * -100}vw);
+    transform: translateX(${props => props.$slideIndex * -100}vw);
     transition: all 1.5s ease;
 
 `
@@ -45,7 +45,7 @@ const Slide = styled.div`
     height: 100vh;
     display: flex;
     align-items: center;
-    background-color: #${props => props.bg};
+    background-color: #${props => props.$bg};
 
    
 
@@ -108,9 +108,9 @@ const Carousel = () => {
             <Arrow direction="left" onClick={() => handleClick("left")}>
                 <ArrowLeftOutlined />
             </Arrow>
-            <Wrapper slideIndex={slideIndex}>
+            <Wrapper $slideIndex={slideIndex}>
                 {sliderItems.map((item) => (
-                    <Slide bg={item.bg}>
+                    <Slide key={item.id} $bg={item.bg}>
                         <ImgContainer>
                             <img src={item.img} />
                         </ImgContainer>

@@ -33,7 +33,7 @@ const Desc = styled.p`
 const NewsCard = ({ item }) => {
     return (
         <Container>
-            <Image src={item.img} alt={item.title} />
+            <Image src={item.img} />
             <Title>{item.title}</Title>
             <Desc>{item.desc}</Desc>
         </Container>

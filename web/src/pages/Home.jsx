@@ -2,8 +2,8 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import BannerSection from '../components/BannerSection'
 import Carousel from '../components/Carousel'
-import ProductCategories from '../components/ProductCategories'
-import NewsCard from '../components/Newscard'
+import NewsList from '../components/NewsList'
+import CategoryList from '../components/CategoryList'
 
 const Home = () => {
   return (
@@ -11,8 +11,8 @@ const Home = () => {
       <BannerSection />
       <Navbar />
       <Carousel />
-      <NewsCard />
-      <ProductCategories />
+      <NewsList/>
+      <CategoryList />
     </div>
   )
 }

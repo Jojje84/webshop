@@ -9,14 +9,14 @@ const Container = styled.div`
     justify-content: space-between;
 `
 
-const Categories = () => {
+const CategoryList = () => {
   return (
     <Container>
       {categories.map(item => (
-        <CategoryCard item={item} />
+        <CategoryCard  key={item.id} item={item} />
       ))}
     </Container>
   );
 }
 
-export default Categories
+export default CategoryList

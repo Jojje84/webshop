@@ -1,6 +1,6 @@
 import React from 'react'
 import NewsCard from './NewsCard'
-import { news } from './data'  
+import { news } from '../data' 
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -13,10 +13,10 @@ const NewsList = () => {
     return (
         <Container>
           {news.map(item => (
-            <CategoryCard item={item} />
+            <NewsCard key={item.id} item={item} />
           ))}
         </Container>
       );
 };
 
-export default NewsList;
+export default NewsList
