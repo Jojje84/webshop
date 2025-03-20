@@ -94,8 +94,8 @@ const Navbar = () => {
           </SearchContainer>
         </Center>
         <Right>
-          <MenuItem>Register</MenuItem>
-          <MenuItem>Sign In</MenuItem>
+          <MenuItem>black/white</MenuItem>
+          <MenuItem>log in</MenuItem>
           <MenuItem>
             <Badge badgeContent={1} color="primary">
               <ShoppingCartOutlined />

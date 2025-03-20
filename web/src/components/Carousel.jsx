@@ -6,12 +6,11 @@ import { useState } from 'react'
 
 const Cointainer = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     display: flex;
-    background-color: coral;
     position: relative;
     overflow: hidden;
-    
+    margin: auto;
 
 `
 const Arrow = styled.div`
@@ -42,7 +41,7 @@ const Wrapper = styled.div`
 `
 const Slide = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: 60vh;
     display: flex;
     align-items: center;
     background-color: #${props => props.$bg};

@@ -5,24 +5,32 @@ import styled from 'styled-components'
 const Container = styled.div`
     width: 300px;
     height: 400px;
-    margin: 20px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 8px;
+
 `;
 
 const Image = styled.img`
     width: 100%;
     height: 60%;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 25px 25px 0 0;
+`;
+
+const Info = styled.div`
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #f5f5f5;
+    border-radius: 0 0 25px 25px;
+    align-items: center;
+
 `;
 
 const Title = styled.h2`
-    font-size: 20px;
-    margin: 10px 0;
+    font-size: 30px;
+    margin: 20px 0;
 `;
 
 const Desc = styled.p`
@@ -34,8 +42,10 @@ const NewsCard = ({ item }) => {
     return (
         <Container>
             <Image src={item.img} />
-            <Title>{item.title}</Title>
-            <Desc>{item.desc}</Desc>
+            <Info>
+                <Title>{item.title}</Title>
+                <Desc>{item.desc}</Desc>
+            </Info>
         </Container>
     );
 };
