@@ -9,7 +9,7 @@ const Container = styled.div`
 
 `;
 
-const Image = styled.img`
+const Img = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -43,7 +43,7 @@ const Button = styled.button`
 const CategoryCard = ({ item }) => {
     return (
         <Container>
-            <Image src={item.img} />
+            <Img src={item.img} />
             <Info>
                 <Title>{item.title}</Title>
                 <button>Look</button>
