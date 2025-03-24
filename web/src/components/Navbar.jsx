@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 
 
 `;
@@ -37,8 +37,8 @@ const Center = styled.div`
   justify-content: flex-end;
   align-items: center;
   background-color: #B0B3B8;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
   height: 100%;
   padding-right: 10px;
   
@@ -48,7 +48,7 @@ const SearchContainer = styled.div`
   display: flex;
   align-items: center;
   border: 0.5px solid lightgray;
-  border-radius: 20px;
+  border-radius: 15px;
   background-color: white;
   
   
@@ -74,8 +74,8 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   background-color: #B0B3B8;
   padding-right: 10px;
   margin-left: 30px;

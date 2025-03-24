@@ -5,16 +5,26 @@ import styled from 'styled-components'
 const Container = styled.div`
     width: 100%;
     height: 50vh;
-    margin: 10px;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* initial no shadow */
+    transition: all 0.2s ease;
+    border-radius: 25px;
 
+    &:hover {
+        border-color: #ff9999;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        transform: scale(1.02);
+  }
+    
 `;
 
 const Img = styled.img`
     width: 100%;
-    height: 100%;
+    height: 70%;
     object-fit: cover;
     border-radius: 25px 25px 0 0;
 `;
@@ -35,22 +45,23 @@ const Title = styled.h2`
     font-size: 30px;
     margin: 20px 0;
     text-align: center;
+    margin: 20px;
 `;
 
 const Desc = styled.p`
     font-size: 14px;
     color: #555;
     text-align: center;
-    margin: 20px;
+    margin: 10px;
 `;
 
-const NewsCard = ({ item }) => {
+const NewsCard = ({ item , onClick }) => {
     return (
-        <Container>
+        <Container onClick={onClick}>
             <Img src={item.img} />
             <Info>
                 <Title>{item.title}</Title>
-                <Desc>{item.desc}</Desc>
+                <Desc>{item.desc.substring(0, 70)}...</Desc>
             </Info>
         </Container>
     );

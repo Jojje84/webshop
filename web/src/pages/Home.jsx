@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
+import InfoSection from '../components/InfoSection'
 
 
 const HomeContainer = styled.div`
@@ -21,7 +22,7 @@ const HomeContainer = styled.div`
   border-radius: 25px;
   justify-content: center;
   box-sizing: border-box;
-  margin: 10%;
+  margin: 20%;
   overflow-y: hidden;
   box-shadow: 2px 2px 50px rgb(104, 103, 103), -2px -2px 50px rgb(104, 103, 103);
 `;
@@ -48,6 +49,7 @@ const Home = () => {
       <HeroSection />
       <NewsSection/>
       <CategorySection />
+      <InfoSection />
       <Newsletter />
       <Footer />
     </HomeContainer>

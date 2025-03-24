@@ -41,8 +41,10 @@ const Wrapper = styled.div`
 
 const Slide = styled.div`
     width: 100vw;
+    height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: #${props => props.$bg};
 
 `;
@@ -54,17 +56,16 @@ const ImgContainer = styled.div`
     justify-content: center;
     align-items: center;
     overflow: hidden;
-
+    
 `;
 
 
 const InfoContainer = styled.div`
     flex: 1;
-    height: 10vh;
+    height: 0;
     display: flex;
     flex-direction: column;
-    align-items: left;
-    margin-left: 50px;
+    justify-content: center;
 
 `;
 

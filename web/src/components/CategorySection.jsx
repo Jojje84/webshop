@@ -33,6 +33,7 @@ const CategoryWrapper = styled.div`
     margin: 0 30px 0 30px;
     flex-grow: 1;
     width: 100%;
+    
 `;
 
 const CategorySection = () => {
