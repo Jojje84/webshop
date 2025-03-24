@@ -28,16 +28,18 @@ const Desc = styled.div`
     font-size: 24px;
     font-weight: 300;
     margin-bottom: 20px;
+    color: white;
 `;
 
 const InputContainer = styled.div`
-    width: 50%;
+    width: 500px;
     height: 40px;
     background-color: white;
     display: flex;
     justify-content: space-between;
-    border: 1px solid lightgray;
+    border: 0px solid lightgray;
     border-radius: 20px;
+;
 `;
 
 const Input = styled.input`

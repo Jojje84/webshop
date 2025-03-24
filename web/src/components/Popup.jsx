@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { popupsizes } from '../data';
 
 
 const Overlay = styled.div`
@@ -17,14 +18,16 @@ const Overlay = styled.div`
 `;
 
 const PopupBox = styled.div`
-  background: white;
+  background: ${(props) => props.$background || '#f0f0f0'};
   padding: 20px;
   border-radius: 50px;
-  width: 250px;
+  width: ${(props) => props.width || '250px'};
+  height: ${(props) => props.height || '200px'};
   max-width: 100%;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
+
 `;
 
 const CloseButton = styled.button`
@@ -43,10 +46,17 @@ const CloseButton = styled.button`
 `;
 
 
-const Popup = ({ title, content, onClose, children }) => {
+const Popup = ({ title, content, onClose, children, size = 'small' }) => {
+  
+  const { width, height, background } = popupsizes[size] || popupsizes.small;
+
   return (
     <Overlay onClick={onClose}>
-      <PopupBox onClick={(e) => e.stopPropagation()}>
+      <PopupBox onClick={(e) => e.stopPropagation()}
+        width={width}
+        height={height}
+        $background={background}>
+        
         <CloseButton onClick={onClose}>×</CloseButton>
         {children ? children : (
           <>

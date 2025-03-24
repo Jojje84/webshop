@@ -41,7 +41,8 @@ const Home = () => {
   return (
     <HomeContainer>
       {isOpen && (
-        <Popup onClose={() => setIsOpen(false)}>
+        <Popup onClose={() => setIsOpen(false)} size="small">
+          
           <BannerSection />
         </Popup>
       )}

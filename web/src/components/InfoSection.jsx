@@ -1,51 +1,69 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Search } from '@mui/icons-material';
-
+import { CheckBoxOutlined, ContentPasteOutlined, LocalShippingOutlined, ThumbUpOutlined } from '@mui/icons-material';
 
 
 const Container = styled.div`
-    width: 100%;
-    height: 50vh;
+    width: 80%;
+    max-width: 1200px;
+    height: 100%;
     text-align: center;
-    margin-top: 50px;
+    margin: 50px auto;
+
 
 `;
 
 const Title = styled.h1`   
     justify-content: center;
     display: flex;
+    margin-bottom: 40px;
+    font-size: 28px;
+    font-weight: bold;
 
 `;	
 
 const Steps = styled.div`
     display: flex;
-    justify-content: spade-between;	
+    justify-content: space-around;
     flex-wrap: wrap;
+    gap: 20px;
+    margin: 50px;
 
 `;
 
 const Ways = styled.div`
-    width: 200px;
-    margin: 20px;
+    width: 45%;
     text-align: center;
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 50px;
+    
 `;
 
-const Input = styled.input`
-    width: 50px;
-    height: 50px
+const Info = styled.div`
+    width: 55%;
+
 `;
 
 const StepTitle = styled.h2`
     font-size: 18px;
-    margon-top: 10px;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    
+    
 
 `;
 
 const StepDesc = styled.p`
     font-size: 14px;
-    margon-top: 5px;
+    text-align: left;
+    margin: 0;
+    padding: 0;
 
 `;
 
@@ -55,25 +73,34 @@ const InfoSection = () => {
         <Title>How to Shop in Our Webshop</Title>
         <Steps>
             <Ways>
-            <Input placeholder="Search" />
-                <StepTitle>1. Select Products</StepTitle>
-                <StepDesc>Choose the product you want to buy</StepDesc>
+                <ContentPasteOutlined style={{ fontSize: "50px", margin: "20px" }}/>
+                <Info>
+                    <StepTitle>1. Select Products</StepTitle>
+                    <StepDesc>Browse our wide selection and add your favorite products to the shopping cart with just one click.</StepDesc>
+                </Info>
             </Ways>
             <Ways>
-                <Img></Img>
+            <CheckBoxOutlined style={{ fontSize: "50px", margin: "20px" }}/>
+            <Info>
                 <StepTitle>2. Proceed to Checkout</StepTitle>
-                <StepDesc>Click on the product to see more details</StepDesc>
+                <StepDesc>When you're happy with your selections, proceed to checkout. Easily fill in your details and delivery information.</StepDesc>
+            </Info>
             </Ways>
             <Ways>
-                <Img></Img>
+            <ThumbUpOutlined style={{ fontSize: "50px", margin: "20px" }}/>
+            <Info>
                 <StepTitle>3. Confirm your order</StepTitle>
-                <StepDesc>Add the product to your cart</StepDesc>
+                <StepDesc>Review your selections and verify that all your details are correct before securely confirming your order.</StepDesc>
+            </Info>
             </Ways>
             <Ways>
-                <Img></Img>
+            <LocalShippingOutlined style={{ fontSize: "50px", margin: "20px" }}/>
+            <Info>
                 <StepTitle>4. Fast Delivery</StepTitle>
-                <StepDesc>Go to your cart and proceed to checkout</StepDesc>
+                <StepDesc>Your order is packed and quickly shipped to your home. Easily track your delivery with the tracking link sent to your email.</StepDesc>
+            </Info>
             </Ways>
+            
         </Steps>
     </Container>
   )
