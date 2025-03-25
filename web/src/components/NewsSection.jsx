@@ -1,6 +1,6 @@
 import React from 'react'
 import NewsCard from './NewsCard'
-import { news } from '../data' 
+import { news } from '../data'
 import styled from 'styled-components'
 import Popup from './Popup'
 import { useState } from 'react'
@@ -48,16 +48,16 @@ const NewsWrapper = styled.div`
 
 const NewsSection = () => {
   const [selectedNews, setSelectedNews] = useState(null);
-    return (
-        <Container>
-          <Headline>NEWS</Headline>
-          <NewsWrapper>
-            {news.map(item => (
-              <NewsCard key={item.id} item={item} onClick={() => setSelectedNews(item) }/>
-            ))}
-          </NewsWrapper>
-          {selectedNews && (
-        <Popup onClose={() => setSelectedNews(null)}>
+  return (
+    <Container>
+      <Headline>NEWS</Headline>
+      <NewsWrapper>
+        {news.map(item => (
+          <NewsCard key={item.id} item={item} onClick={() => setSelectedNews(item)} />
+        ))}
+      </NewsWrapper>
+      {selectedNews && (
+        <Popup onClose={() => setSelectedNews(null)} size="medium">
           <div style={{ padding: "20px", textAlign: "center" }}>
             <h2>{selectedNews.title}</h2>
             <img
@@ -75,8 +75,8 @@ const NewsSection = () => {
           </div>
         </Popup>
       )}
-        </Container>
-      );
+    </Container>
+  );
 };
 
 export default NewsSection;

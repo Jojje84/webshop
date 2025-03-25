@@ -27,6 +27,9 @@ const PopupBox = styled.div`
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 
 `;
 

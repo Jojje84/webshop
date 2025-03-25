@@ -70,20 +70,20 @@ export const categories = [
 
 export const popupsizes = {
     small: {
-      width: '250px',
-      height: '200px',
-      background: '#f0f0f0',
+        width: '250px',
+        height: '150px',
+        background: '#f0f0f0',
     },
     medium: {
-      width: '400px',
-      height: '300px',
-      background: '#ffffff',
+        width: '450px',
+        height: '500px',
+        background: '#ffffff',
     },
 
     large: {
-      width: '600px',
-      height: '500px',
-      background: '#fafafa',
-  },
+        width: '600px',
+        height: '500px',
+        background: '#fafafa',
+    },
 
 };
