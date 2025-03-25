@@ -48,17 +48,17 @@ export const news = [
 export const categories = [
     {
         id: 1,
-        img: "public/demo.png",
+        img: "public/images/categories/abstract/abstract1.png",
         title: "Abstract",
     },
     {
         id: 2,
-        img: "public/demo.png",
+        img: "public/images/categories/animal/animal1.png",
         title: "Animal",
     },
     {
         id: 3,
-        img: "public/demo.png",
+        img: "public/images/categories/citys/citys1.png",
         title: "Citys",
     },
     {
@@ -75,8 +75,8 @@ export const popupsizes = {
         background: '#f0f0f0',
     },
     medium: {
-        width: '450px',
-        height: '500px',
+        width: '600px',
+        height: '600px',
         background: '#ffffff',
     },
 
