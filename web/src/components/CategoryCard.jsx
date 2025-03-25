@@ -46,13 +46,15 @@ const Button = styled.button`
 
 `;
 
-const CategoryCard = ({ item }) => {
+const CategoryCard = ({ item  }) => {
+
+    
     return (
         <Container>
             <Img src={item.img} />
             <Info>
                 <Title>{item.title}</Title>
-                <Button>Click in</Button>
+                <Button >Click in</Button>
             </Info>
 
         </Container>

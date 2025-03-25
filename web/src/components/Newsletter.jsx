@@ -5,8 +5,7 @@ import { Send } from '@mui/icons-material'
 
 
 const Container = styled.div`
-    width: 100%;
-    height: 50vh;
+    height: 60vh;
     display: flex;
     background-color: #f5f5f5;);
     justify-content: center;
@@ -69,7 +68,7 @@ const Newsletter = () => {
         <Title>Newsletter</Title>
         <Desc>Keep you update!!!</Desc>
         <InputContainer>
-            <Input placeholder="Your Email"/>
+            <Input placeholder="Type your Email"/>
             <Button>
                 <Send/>
             </Button>

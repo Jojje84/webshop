@@ -103,7 +103,7 @@ const HeroSection = () => {
             <Arrow direction="left" onClick={() => handleClick("left")}>
                 <ArrowLeftOutlined />
             </Arrow>
-            <Wrapper slideIndex={slideIndex}>
+            <Wrapper style={{ transform: `translateX(${slideIndex * -100}vw)` }}>
                 {sliderItems.map(item => (
                 <Slide key={item.id} $bg={item.bg}>
                      <ImgContainer>

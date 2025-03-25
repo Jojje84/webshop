@@ -10,6 +10,7 @@ import styled from 'styled-components'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
 import InfoSection from '../components/InfoSection'
+/* import Products from '../components/Products' */
 
 
 const HomeContainer = styled.div`
@@ -41,6 +42,7 @@ const Home = () => {
       <HeroSection />
       <NewsSection/>
       <CategorySection />
+      {/* <Products /> */}
       <InfoSection />
       <Newsletter />
       <Footer />
