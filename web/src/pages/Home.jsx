@@ -13,18 +13,9 @@ import InfoSection from '../components/InfoSection'
 
 
 const HomeContainer = styled.div`
-  height: 100%;
-  width: 100wh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 2px solid black;
-  border-radius: 25px;
-  justify-content: center;
-  box-sizing: border-box;
-  margin: 20%;
-  overflow-y: hidden;
-  box-shadow: 2px 2px 50px rgb(104, 103, 103), -2px -2px 50px rgb(104, 103, 103);
+  max-width: 1920px;
+  max-height: 1080px;
+  margin: 0 auto;
 `;
 
 const Home = () => {

@@ -5,13 +5,14 @@ import { categories } from '../data'
 
 const Container = styled.div`
     display: flex;
+    padding: 20px;
+    justify-content: space-between;
     flex-direction: column;
-    align-items: center;
-    margin: 40px 0 30px 0;
+    
 `;
 
 const Headline = styled.div`
-     width: 100%;
+    width: 100%;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
@@ -30,7 +31,6 @@ const Headline = styled.div`
 const CategoryWrapper = styled.div`
     display: flex;
     justify-content: center;
-    margin: 0 30px 0 30px;
     flex-grow: 1;
     width: 100%;
     

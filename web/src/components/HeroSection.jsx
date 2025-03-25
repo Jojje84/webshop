@@ -6,11 +6,10 @@ import { useState } from 'react'
 
 const Cointainer = styled.div`
     width: 100%;
-    height: 50vh;
+    height: 100vh;
     display: flex;
     position: relative;
     overflow: hidden;
-    margin: auto;
 
 ;`
 const Arrow = styled.div`
@@ -28,45 +27,43 @@ const Arrow = styled.div`
     right: ${props => props.direction === "right" && "10px"};
     margin: auto;
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.5; 
     z-index: 2;
 
 `;
 const Wrapper = styled.div`
+    height: 100%;
     display: flex;
-    transform: translateX(${props => props.$slideIndex * -100}vw);
     transition: all 1.5s ease;
+    transform: translateX(${props => props.slideIndex * -100}vw);
 
 `;
 
 const Slide = styled.div`
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
     background-color: #${props => props.$bg};
 
 `;
 
 const ImgContainer = styled.div`
-    flex: 1; 
+    flex: 1;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    
     
 `;
 
+const Img = styled.img`
+    height: 80%;
+
+`;
 
 const InfoContainer = styled.div`
     flex: 1;
-    height: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+    padding: 50px;
+  
 `;
 
 const Title = styled.h1`
@@ -75,50 +72,49 @@ const Title = styled.h1`
 `;
 
 const Desc = styled.p`
+    margin: 50px 0px;
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 3px;
 
 `;
 const Button = styled.button`
+    padding: 10px;
     font-size: 20px;
     background-color: transparent;
     cursor: pointer;
-    width: 100px;
-    margin-left: 5%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 
 `;
 
 const HeroSection = () => {
     const [slideIndex, setSlideIndex] = useState(0)
-    const handleClick = (direction) => {
-        if (direction === "left") {
-            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
-        } else {
-            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
-        }
 
-    }
+    const handleClick = (direction) => {
+     
+        if(direction === "left") {
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+        } else {
+            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+        }
+    };
+  
     return (
         <Cointainer>
             <Arrow direction="left" onClick={() => handleClick("left")}>
                 <ArrowLeftOutlined />
             </Arrow>
-            <Wrapper $slideIndex={slideIndex}>
-                {sliderItems.map((item) => (
-                    <Slide key={item.id} $bg={item.bg}>
-                        <ImgContainer>
-                            <img src={item.img} />
-                        </ImgContainer>
+            <Wrapper slideIndex={slideIndex}>
+                {sliderItems.map(item => (
+                <Slide key={item.id} $bg={item.bg}>
+                     <ImgContainer>
+                           <Img src={item.img} />
+                       </ImgContainer>
                         <InfoContainer>
                             <Title>{item.title} </Title>
                             <Desc>{item.desc}</Desc>
                             <Button>Look</Button>
                         </InfoContainer>
-                    </Slide>
+                 </Slide>
                 ))}
             </Wrapper>
             <Arrow direction="right" onClick={() => handleClick("right")}>
