@@ -1,9 +1,9 @@
 import Home from "./pages/Home"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
-import Products from "./pages/Products";
 import Cart from "./pages/Cart";
 import CategorySection from './components/CategorySection'
+import Products from "./components/Products"
 
 const App = () => {
   return (
