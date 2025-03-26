@@ -3,16 +3,16 @@ import styled from 'styled-components'
 
 
 const Container = styled.div`
-    width: 100%;
-    height: 100%;
-    margin: 20px;
+    width: 300px;
+    height: 500px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     cursor: pointer;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* initial no shadow */
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     transition: all 0.2s ease;
     border-radius: 25px;
+    background-color: white;
 
     &:hover {
         border-color: #ff9999;
@@ -34,7 +34,7 @@ const Info = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    border: 2px solid #f5f5f5;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
     border-radius: 0 0 25px 25px;
     align-items: center;
     justify-content: center;
@@ -45,7 +45,6 @@ const Title = styled.h2`
     font-size: 30px;
     margin: 20px 0;
     text-align: center;
-    margin: 20px;
 `;
 
 const Desc = styled.p`

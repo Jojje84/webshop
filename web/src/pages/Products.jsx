@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useState } from 'react';
+import { fetchProducts } from "../services/productService"
 
 const Container = styled.div`
 
@@ -91,6 +92,13 @@ const Button = styled.button`
 
 const Products = () => {
     const [amount, setAmount] = useState(1);
+    const [product, setProduct] = useState(null);
+
+    useEffect(() => {
+        fetchProducts().then((data) => {
+            setProduct(data[0]); // Använd första produkten som exempel
+        });
+    }, []);
 
     const increaseAmount = () => {
         setAmount(amount + 1);
@@ -104,8 +112,7 @@ const Products = () => {
     return (
         <Container>
             <Wrapper>
-                <ImgContainer src="/demo.png" alt="demo">
-                </ImgContainer>
+                <ImgContainer src={product.image} alt={product.name} />
                 <InfoContainer>
                     <Title>Product Title</Title>
                     <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab illum debitis itaque odit eum distinctio blanditiis, mollitia in modi ratione nobis exercitationem animi hic inventore vel praesentium aperiam omnis. Quas?</Desc>
@@ -120,9 +127,8 @@ const Products = () => {
                     </AddContainer>
                 </InfoContainer>
             </Wrapper>
-
         </Container>
-    )
-}
+    );
+};
 
 export default Products

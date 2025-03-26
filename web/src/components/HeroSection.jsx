@@ -1,8 +1,9 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material'
 import React from 'react'
 import styled from 'styled-components'
-import { sliderItems } from '../data'
+import { sliderItems } from '../data/sliderItems'
 import { useState } from 'react'
+import { useEffect } from 'react'
 
 const Cointainer = styled.div`
     width: 100%;
@@ -35,7 +36,7 @@ const Wrapper = styled.div`
     height: 100%;
     display: flex;
     transition: all 1.5s ease;
-    transform: translateX(${props => props.slideIndex * -100}vw);
+    transform: translateX(${props => props.$slideIndex * -100}vw);
 
 `;
 
@@ -44,6 +45,7 @@ const Slide = styled.div`
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: #${props => props.$bg};
 
 `;
@@ -51,12 +53,18 @@ const Slide = styled.div`
 const ImgContainer = styled.div`
     flex: 1;
     height: 100%;
-    
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 `;
 
 const Img = styled.img`
-    height: 80%;
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    vertical-align: middle;
 
 `;
 
@@ -86,35 +94,41 @@ const Button = styled.button`
 
 `;
 
-const HeroSection = () => {
+const HeroSection = ({ onOpenCategories }) => {
     const [slideIndex, setSlideIndex] = useState(0)
 
     const handleClick = (direction) => {
-     
-        if(direction === "left") {
-            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+        if (direction === 'left') {
+            setSlideIndex(prev => (prev > 0 ? prev - 1 : sliderItems.length - 1));
         } else {
-            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+            setSlideIndex(prev => (prev < sliderItems.length - 1 ? prev + 1 : 0));
         }
     };
-  
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+          setSlideIndex(prev => (prev < sliderItems.length - 1 ? prev + 1 : 0));
+        }, 5000);
+        return () => clearInterval(interval);
+      }, []);
+
     return (
         <Cointainer>
             <Arrow direction="left" onClick={() => handleClick("left")}>
                 <ArrowLeftOutlined />
             </Arrow>
-            <Wrapper style={{ transform: `translateX(${slideIndex * -100}vw)` }}>
+            <Wrapper $slideIndex={slideIndex}>
                 {sliderItems.map(item => (
-                <Slide key={item.id} $bg={item.bg}>
-                     <ImgContainer>
-                           <Img src={item.img} />
-                       </ImgContainer>
+                    <Slide key={item.id} $bg={item.bg}>
+                        <ImgContainer>
+                            <Img src={item.img} />
+                        </ImgContainer>
                         <InfoContainer>
                             <Title>{item.title} </Title>
                             <Desc>{item.desc}</Desc>
-                            <Button>Look</Button>
+                            <Button onClick={onOpenCategories}>Look</Button>
                         </InfoContainer>
-                 </Slide>
+                    </Slide>
                 ))}
             </Wrapper>
             <Arrow direction="right" onClick={() => handleClick("right")}>

@@ -2,6 +2,7 @@ import { Search, ShoppingCartOutlined } from '@mui/icons-material';
 import { Badge } from '@mui/material';
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
   height: 60px;
@@ -29,6 +30,14 @@ const Left = styled.div`
   height: 100%;
 
   `;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  margin-right: 15px;
+  font-weight: bold;
+  font-size: 14px;
+`;
 
 
 const Center = styled.div`
@@ -65,7 +74,7 @@ const CenterSpace = styled.div`
   flex-basis: 15%;
   display: flex;
   justify-content: center;
-  bsckground-color: white;
+  background-color: white;
 
   `;
 
@@ -92,30 +101,32 @@ const MenuItem = styled.div`
 
   `;
 
-const Navbar = () => {
+const Navbar = ({ onCategoriesClick }) => {
   return (
     <Container>
       <Wrapper>
-        <Left>
-          Home
-          Categories
-          Contact
-        </Left>
+      <Left>
+      <StyledLink to="/">Home</StyledLink>
+      <MenuItem onClick={onCategoriesClick}>Categories</MenuItem>
+      <StyledLink to="/contact">Contact</StyledLink>
+    </Left>
         <Center>
           <SearchContainer>
             <Input placeholder="Search" />
             <Search style={{ color: "gray", fontSize: 20 }} />
           </SearchContainer>
         </Center>
-        <CenterSpace>
-        </CenterSpace>
+        <CenterSpace />
         <Right>
-          <MenuItem>black/white</MenuItem>
-          <MenuItem>log in</MenuItem>
           <MenuItem>
-            <Badge badgeContent={1} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
+            <StyledLink to="/login">Log in</StyledLink>
+          </MenuItem>
+          <MenuItem>
+            <StyledLink to="/cart">
+              <Badge badgeContent={1} color="primary">
+                <ShoppingCartOutlined />
+              </Badge>
+            </StyledLink>
           </MenuItem>
         </Right>
       </Wrapper>

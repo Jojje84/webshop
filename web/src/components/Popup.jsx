@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
-import { popupsizes } from '../data';
+import styled, { keyframes } from 'styled-components'
+import { useEffect } from 'react';
 
 
 const Overlay = styled.div`
@@ -17,20 +17,27 @@ const Overlay = styled.div`
   
 `;
 
-const PopupBox = styled.div`
-  background: ${(props) => props.$background || '#f0f0f0'};
-  padding: 20px;
-  border-radius: 50px;
-  width: ${(props) => props.width || '250px'};
-  height: ${(props) => props.height || '200px'};
-  max-width: 100%;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+const popupFade = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
 
+const PopupBox = styled.div`
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 25px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  animation: ${popupFade} 0.3s ease-out;
+  position: relative;
 `;
 
 const CloseButton = styled.button`
@@ -49,17 +56,21 @@ const CloseButton = styled.button`
 `;
 
 
-const Popup = ({ title, content, onClose, children, size = 'small' }) => {
-  
-  const { width, height, background } = popupsizes[size] || popupsizes.small;
+const Popup = ({ title, content, onClose, children }) => {
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
 
   return (
     <Overlay onClick={onClose}>
-      <PopupBox onClick={(e) => e.stopPropagation()}
-        width={width}
-        height={height}
-        $background={background}>
-        
+      <PopupBox onClick={(e) => e.stopPropagation()}>
         <CloseButton onClick={onClose}>×</CloseButton>
         {children ? children : (
           <>
