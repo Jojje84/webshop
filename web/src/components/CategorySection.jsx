@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import React from 'react'
 import CategoryCard from './CategoryCard'
-import { categories } from '../data'
+import { categories } from '../data/categories' 
+import { Link } from 'react-router-dom'
+
 
 const Container = styled.div`
     display: flex;
@@ -33,8 +35,10 @@ const CategoryWrapper = styled.div`
     justify-content: center;
     flex-grow: 1;
     width: 100%;
+
     
 `;
+
 
 const CategorySection = () => {
   return (
@@ -42,7 +46,9 @@ const CategorySection = () => {
       <Headline>Categories</Headline>
       <CategoryWrapper>
         {categories.map(item => (
-          <CategoryCard  key={item.id} item={item} />
+          <Link key={item.id} to={`/products/${item.title.toLowerCase()}`}>
+          <CategoryCard item={item} />
+        </Link>
         ))}
       </CategoryWrapper>
     </Container>

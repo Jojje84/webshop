@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useState } from 'react';
-import { fetchProducts } from "../services/productService"
+import { useParams } from 'react-router-dom'
+import { getProductsByCategory } from '../data/products'
+import { useEffect } from 'react'; 
 
 const Container = styled.div`
 
@@ -11,11 +13,12 @@ const Container = styled.div`
 const Wrapper = styled.div`
     padding: 50px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 
 `;
 
 const ImgContainer = styled.img`
-    flex: 1;
     width: 50%;
     height: 50vh;
     object-fit: cover;
@@ -91,41 +94,40 @@ const Button = styled.button`
 
 
 const Products = () => {
-    const [amount, setAmount] = useState(1);
-    const [product, setProduct] = useState(null);
+    const { categoryName } = useParams();
+    const [categoryProducts, setCategoryProducts] = useState([]);
+    const [amount, setAmount] = useState(1); 
 
     useEffect(() => {
-        fetchProducts().then((data) => {
-            setProduct(data[0]); // Använd första produkten som exempel
-        });
-    }, []);
+        const products = getProductsByCategory(categoryName);
+        setCategoryProducts(products);  
+    }, [categoryName]); 
 
-    const increaseAmount = () => {
-        setAmount(amount + 1);
-    };
+    if (categoryProducts.length === 0) {
+        return <div>Inga produkter hittades för denna kategori.</div>;  
+    }
 
-    const decreaseAmount = () => {
-        if (amount > 1) {
-            setAmount(amount - 1);
-        }
-    };
     return (
         <Container>
             <Wrapper>
-                <ImgContainer src={product.image} alt={product.name} />
+            {categoryProducts.map((product) => (
+          <div key={product.id}>
+                <ImgContainer src={product.img} alt={product.title} />
                 <InfoContainer>
-                    <Title>Product Title</Title>
-                    <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab illum debitis itaque odit eum distinctio blanditiis, mollitia in modi ratione nobis exercitationem animi hic inventore vel praesentium aperiam omnis. Quas?</Desc>
-                    <Price>100 kr</Price>
-                    <AddContainer>
+                <Title>{product.title}</Title>
+                        <Desc>{product.desc}</Desc>
+                        <Price>{product.price} kr</Price>
+                        <AddContainer>
                         <AmountContainer>
-                            <RemoveIcon onClick={decreaseAmount}>-</RemoveIcon>
-                            <Amount>1</Amount>
-                            <AddIcon onClick={increaseAmount}>+</AddIcon>
+                        <RemoveIcon onClick={() => setAmount(amount - 1)}>-</RemoveIcon>
+                                <Amount>{amount}</Amount>
+                                <AddIcon onClick={() => setAmount(amount + 1)}>+</AddIcon>
                         </AmountContainer>
                         <Button>Add to Cart</Button>
                     </AddContainer>
                 </InfoContainer>
+            </div>
+        ))}
             </Wrapper>
         </Container>
     );

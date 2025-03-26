@@ -1,8 +1,9 @@
-import products from "../data/products";
+import { getProducts } from "../data"; 
 
-export const fetchProducts = () => {
+export const fetchProducts = (category) => {
   return new Promise((resolve) => {
     setTimeout(() => {
+      const products = getProducts(category); 
       resolve(products);
     }, 500);
   });

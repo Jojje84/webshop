@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const Container = styled.div`
     flex: 1;
-    margin: 3px;
-    height: 70vh;
+    margin: 10px;
+    max-width: 300px; 
+    height: 300px;
     position: relative;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 const Img = styled.img`
@@ -46,18 +51,18 @@ const Button = styled.button`
 
 `;
 
-const CategoryCard = ({ item  }) => {
-
-    
+const CategoryCard = ({ item }) => {
     return (
         <Container>
             <Img src={item.img} />
             <Info>
                 <Title>{item.title}</Title>
+                <Link to={`/products/${item.title.toLowerCase()}`}>
                 <Button >Click in</Button>
-            </Info>
+            </Link>
+        </Info>
 
-        </Container>
+        </Container >
     )
 }
 
