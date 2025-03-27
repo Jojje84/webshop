@@ -1,17 +1,17 @@
-import Home from "./pages/Home"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
+import Home from "./pages/Home"
 import Cart from "./pages/Cart";
-import CategorySection from './components/CategorySection'
-import Products from "./components/Products"
+import ProductList from "./pages/ProductList"
+
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/categories" element={<CategorySection />} />
-        <Route path="/products/:categoryName" element={<Products />} />
+  
+        <Route path="/products/:category" element={<ProductList />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>

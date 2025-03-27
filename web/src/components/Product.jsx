@@ -62,13 +62,19 @@ const Icon = styled.div`
     }
 `;
 
+const Image = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+`;
 
 
 const Product = ({item}) => {
   return (
     <Container>
         <Cirkel/>
-        <img src={item.img} alt=""  style={{ height: '70%', zIndex: '2'  }}/>
+        <Image src={item.img} alt={item.title} />
         <Info>
             <Icon>
                 <ShoppingCartOutlined/>

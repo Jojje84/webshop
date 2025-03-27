@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import React from 'react'
-import { Link } from 'react-router-dom'
+
+
 
 
 const Container = styled.div`
@@ -51,18 +52,22 @@ const Button = styled.button`
 
 `;
 
-const CategoryCard = ({ item }) => {
+const CategoryCard = ({  item, onCategoryClick  }) => {
+    const handleClick = () => {
+        if (typeof onCategoryClick === 'function') {
+          onCategoryClick(item.title);
+        }
+      };
+
     return (
         <Container>
-            <Img src={item.img} />
+            <Img src={item.img} alt={item.title} />
             <Info>
                 <Title>{item.title}</Title>
-                <Link to={`/products/${item.title.toLowerCase()}`}>
-                <Button >Click in</Button>
-            </Link>
-        </Info>
-
+                <Button  onClick={handleClick}>Click in</Button>
+            </Info>
         </Container >
+
     )
 }
 

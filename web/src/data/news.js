@@ -2,7 +2,7 @@
 const imageModules = import.meta.glob('/src/assets/news/*.png', { eager: true });
 
 const imageArray = Object.values(imageModules).map((mod) => mod.default);
-console.log("Loaded news images:", imageArray);
+
 
 
 export const news = [

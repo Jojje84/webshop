@@ -1,6 +1,6 @@
 import React from 'react'
 import NewsCard from './NewsCard'
-import { news } from '../data'
+import { news } from '../data/news'
 import styled from 'styled-components'
 import Popup from './Popup'
 import { useState } from 'react'

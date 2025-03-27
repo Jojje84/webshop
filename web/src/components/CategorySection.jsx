@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import React from 'react'
 import CategoryCard from './CategoryCard'
 import { categories } from '../data/categories' 
-import { Link } from 'react-router-dom'
+
 
 
 const Container = styled.div`
@@ -10,6 +10,7 @@ const Container = styled.div`
     padding: 20px;
     justify-content: space-between;
     flex-direction: column;
+    align-items: center;
     
 `;
 
@@ -27,7 +28,7 @@ const Headline = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
+    max-width: 90%;
 `;
 
 const CategoryWrapper = styled.div`
@@ -40,15 +41,13 @@ const CategoryWrapper = styled.div`
 `;
 
 
-const CategorySection = () => {
+const CategorySection = ({ onCategoryClick }) => {
   return (
     <Container>
       <Headline>Categories</Headline>
       <CategoryWrapper>
         {categories.map(item => (
-          <Link key={item.id} to={`/products/${item.title.toLowerCase()}`}>
-          <CategoryCard item={item} />
-        </Link>
+          <CategoryCard key={item.id} item={item} onCategoryClick={onCategoryClick} />
         ))}
       </CategoryWrapper>
     </Container>

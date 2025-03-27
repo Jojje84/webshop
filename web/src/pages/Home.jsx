@@ -10,6 +10,7 @@ import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
 import InfoSection from '../components/InfoSection'
 import CategorySection from '../components/CategorySection'
+import ProductList from './ProductList'
 
 
 
@@ -22,6 +23,7 @@ const HomeContainer = styled.div`
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -40,15 +42,22 @@ const Home = () => {
           <BannerSection />
         </Popup>
       )}
-      {showCategories && (
+      {showCategories && !selectedCategory && (
         <Popup onClose={() => setShowCategories(false)}>
-          <CategorySection />
+        <CategorySection onCategoryClick={setSelectedCategory} />
         </Popup>
       )}
 
+      {selectedCategory && (
+        <Popup onClose={() => setSelectedCategory(null)}>
+          <ProductList selectedCategory={selectedCategory} />
+        </Popup>
+      )}
+
+
       <HeroSection onOpenCategories={() => setShowCategories(true)}/>
       <NewsSection/>
-      <CategorySection />
+      <CategorySection onCategoryClick={setSelectedCategory}/>
       <InfoSection />
       <Newsletter />
       <Footer />
