@@ -31,7 +31,6 @@ const Products = ({ selectedCategory, sortOrder }) => {
     if (products.length === 0) {
     }
 
-
     
     if (sortOrder === 'priceLowToHigh') {
       products.sort((a, b) => a.price - b.price);
