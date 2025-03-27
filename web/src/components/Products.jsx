@@ -14,7 +14,6 @@ const Container = styled.div`
 
 `;
 
-
 const Products = () => {
   const { categoryName } = useParams();
   const [categoryProducts, setCategoryProducts] = useState([]);
