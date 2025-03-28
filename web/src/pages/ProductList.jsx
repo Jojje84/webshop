@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { useState } from 'react'
 import { categories } from '../data/categories'
-import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { getProductsByCategory } from '../data/products'
 import Product from '../components/Product'
@@ -85,7 +84,7 @@ const handleSortChange = (e) => {
                     <Select onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory}>
                         <Option value="">Choose Category</Option>
                         {categories.map((category) => (
-                            <Option key={category.id} value={category.title.toLowerCase()}>
+                            <Option key={category.id} value={category.title}>
                                 {category.title}
                             </Option>
             ))}

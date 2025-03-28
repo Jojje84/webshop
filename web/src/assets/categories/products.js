@@ -1,22 +1,13 @@
+const images = import.meta.glob('../assets/categories/abstract/*.png', { eager: true });
 
 const getImagesByCategory = (category) => {
+    const categoryImages = Object.values(images)
+        .filter((mod) => mod.key && mod.key.includes(category))
+        .map((mod) => mod.default);
 
-    let images;
-
-    if (category === 'abstract') {
-        images = import.meta.glob('../assets/categories/abstract/*.png', { eager: true });
-      } else if (category === 'animal') {
-        images = import.meta.glob('../assets/categories/animal/*.png', { eager: true });
-      }
-
-  const imagePaths = Object.values(images).map((mod) => mod.default);
-  return imagePaths;
-};
-
-
-
-const abstractImagespic = getImagesByCategory('abstract');
-const animalImagespic = getImagesByCategory('animal');
+        console.log(`Bilder för ${category}:`, categoryImages);
+    return categoryImages;
+}
 
 
 const abstractProducts = [
@@ -24,35 +15,35 @@ const abstractProducts = [
         id: 1,
         title: "Abstract Painting",
         price: 100,
-        img: abstractImagespic[0],
+        img: getImagesByCategory('Abstract')[0],
         category: "Abstract",
     },
     {
         id: 2,
         title: "Abstract Painting",
         price: 100,
-        img: abstractImagespic[1],
+        img: getImagesByCategory('abstract')[1],
         category: "Abstract",
     },
     {
         id: 3,
         title: "Abstract Painting",
         price: 100,
-        img: abstractImagespic[2],
+        img: getImagesByCategory('abstract')[2],
         category: "Abstract",
     },
     {
         id: 4,
         title: "Abstract Painting",
         price: 100,
-        img: abstractImagespic[3],
+        img: getImagesByCategory('abstract')[3],
         category: "Abstract",
     },
     {
         id: 5,
         title: "Abstract Painting",
         price: 100,
-        img: abstractImagespic[4],
+        img: getImagesByCategory('abstract')[4],
         category: "Abstract",
     },
        
@@ -65,35 +56,35 @@ const animalProducts = [
             id: 1,
             title: "Abstract Painting",
             price: 100,
-            img: animalImagespic[0],
+            img: getImagesByCategory('animal')[0],
             category: "Animal",
         },
         {
             id: 2,
             title: "Abstract Painting",
             price: 100,
-            img: animalImagespic[1],
+            img: getImagesByCategory('animal')[1],
             category: "Animal",
         },
         {
             id: 3,
             title: "Abstract Painting",
             price: 100,
-            img: animalImagespic[2],
+            img: getImagesByCategory('animal')[2],
             category: "Animal",
         },
         {
             id: 4,
             title: "Abstract Painting",
             price: 100,
-            img: animalImagespic[3],
+            img: getImagesByCategory('animal')[3],
             category: "Animal",
         },
         {
             id: 5,
             title: "Abstract Painting",
             price: 100,
-            img: animalImagespic[4],
+            img: getImagesByCategory('animal')[4],
             category: "Animal",
         },
 
@@ -104,7 +95,7 @@ const products = [
     ...abstractProducts,
     ...animalProducts,
   ];
-
-  export const getProductsByCategory = (categoryTitle) => {
-    return products.filter(product => product.category === categoryTitle);
+  
+  export const getProductsByCategory = (categoryName) => {
+    return products.filter(product => product.category === categoryName);
   };
