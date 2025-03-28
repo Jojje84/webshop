@@ -52,7 +52,6 @@ const Option = styled.option``;
 
 
 
-
 const ProductList = ({ selectedCategory, sortOrder, setSelectedCategory, setSortOrder  }) => {
     const [categoryProducts, setCategoryProducts] = useState([]);
 
