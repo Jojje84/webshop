@@ -4,13 +4,16 @@ import { useState } from 'react'
 import { categories } from '../data/categories'
 import { useEffect } from 'react'
 import { getProductsByCategory } from '../data/products'
-import Product from '../components/Product'
+import Products from '../components/Products'
+import { useLocation } from 'react-router-dom'
 
 
 
 
 const Container = styled.div`
     padding: 20px;
+
+
 `;
 
 const Title = styled.h1`
@@ -21,6 +24,7 @@ const Title = styled.h1`
 const FilterContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    
 
 `;
 
@@ -39,17 +43,22 @@ const FilterText = styled.span`
 const Select = styled.select`
     padding: 10px;
     margin-right: 20px;
+    
 
 `;
 
-
 const Option = styled.option``;
+
+
+
+
 
 const ProductList = ({ selectedCategory, sortOrder, setSelectedCategory, setSortOrder  }) => {
     const [categoryProducts, setCategoryProducts] = useState([]);
 
+    
     useEffect(() => {
-
+        console.log("Selected Category: ", selectedCategory);
         if (!selectedCategory) {
             setCategoryProducts([]);
             return;
@@ -71,9 +80,14 @@ const ProductList = ({ selectedCategory, sortOrder, setSelectedCategory, setSort
     setCategoryProducts(filteredProducts);
 }, [selectedCategory, sortOrder]);
 
+
+const handleCategoryChange = (e) => {
+    setSelectedCategory(e.target.value); 
+};
+
 const handleSortChange = (e) => {
     setSortOrder(e.target.value); 
-}
+};
 
     return (
         <Container>
@@ -81,7 +95,7 @@ const handleSortChange = (e) => {
             <FilterContainer>
             <Filter>
             <FilterText>Filter Categories</FilterText>
-                    <Select onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory}>
+                    <Select onChange={handleCategoryChange} value={selectedCategory}>
                         <Option value="">Choose Category</Option>
                         {categories.map((category) => (
                             <Option key={category.id} value={category.title}>
@@ -100,16 +114,8 @@ const handleSortChange = (e) => {
           </Select>
                 </Filter>
             </FilterContainer>
+            <Products   selectedCategory={selectedCategory} sortOrder={sortOrder} />
 
-             {categoryProducts.length === 0 ? (
-                <div>No products found for this category.</div>
-            ) : (
-                <div>
-                    {categoryProducts.map((product) => (
-                        <Product key={product.id} item={product} />
-                    ))}
-                </div>
-            )}
         </Container>
     )
 }

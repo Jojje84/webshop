@@ -38,6 +38,8 @@ const PopupBox = styled.div`
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   animation: ${popupFade} 0.3s ease-out;
   position: relative;
+  
+  
 `;
 
 const CloseButton = styled.button`

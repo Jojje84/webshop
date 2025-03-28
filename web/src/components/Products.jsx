@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useParams } from 'react-router-dom'
 import { getProductsByCategory } from '../data/products'
 import { useEffect, useState } from 'react'
 import Product from './Product'
@@ -11,6 +10,7 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
 
 `;
 
@@ -52,6 +52,7 @@ const Products = ({ selectedCategory, sortOrder }) => {
     return <div>Inga produkter hittades för denna kategori.</div>;
   }
 
+  
   return (
     <Container>
         {categoryProducts.map((item) => (
